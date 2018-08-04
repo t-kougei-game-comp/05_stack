@@ -60,8 +60,8 @@ int main(int argc, char *argv[])
             for(int i = 0; i < STACK_SIZE; i++){
                 int v = stack_get(&s, i);
                 if(v == -1) break;
-                if(i != -1) printf(",");
-                printf("%d", n);
+                if(i != 0) printf(",");
+                printf("%d", v);
             }
             printf("\n");
             break;
