@@ -5,10 +5,11 @@ enum{
     STACK_SIZE = 10,
 };
 
-struct stack{
+typedef struct{
     int top;
     int buf[STACK_SIZE];
-};
+} stack;
+
 // スタックの初期化
 void statc_initialize(stack *p){
     p->top = 0;
