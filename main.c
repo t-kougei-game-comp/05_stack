@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
         case -1:
             // スタックから取り出す
             v = stack_pop(&s);
-            if(v != -1) printf("%d", n);
+            if(v != -1) printf("%d", v);
             printf("\n");
             break;
         case 0:
