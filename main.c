@@ -17,7 +17,7 @@ void statc_initialize(stack *p){
 }
 // スタックに値を追加(失敗したらfalse)
 bool stack_push(stack *p, int n){
-    if(BUF_SIZE <= p->top) return false;
+    if(STACK_SIZE <= p->top) return false;
     p->buf[p->top++] = n;
     return true;
 }
