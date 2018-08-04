@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+enum{
+    STACK_SIZE = 10,
+};
+
 struct stack{
-    enum{
-        BUF_SIZE = 10,
-    };
     int top;
-    int buf[BUF_SIZE];
+    int buf[STACK_SIZE];
 };
 // スタックの初期化
 void statc_initialize(stack *p){
@@ -14,7 +15,7 @@ void statc_initialize(stack *p){
 }
 // スタックに値を追加(失敗したらfalse)
 bool stack_push(stack *p, int n){
-    if(stack::BUF_SIZE <= p->top) return false;
+    if(BUF_SIZE <= p->top) return false;
     p->buf[p->top++] = n;
     return true;
 }
@@ -26,7 +27,7 @@ int stack_pop(stack *p){
 // スタックの上から数えたデータを参照する（-1はデータがなかった場合）
 int stack_get(stack *p, int idx){
     int i = p->top - idx - 1;
-    if(i < 0 || stack::BUF_SIZE <= i) return -1;
+    if(i < 0 || STACK_SIZE <= i) return -1;
     return p->buf[i];
 }
 
@@ -53,7 +54,7 @@ int main(int argc, char *argv[])
             break;
         case 0:
             // スタックを表示
-            for(int i = 0; i < stack::BUF_SIZE; i++){
+            for(int i = 0; i < STACK_SIZE; i++){
                 int v = stack_get(&s, i);
                 if(v == -1) break;
                 if(i != -1) printf(",");
