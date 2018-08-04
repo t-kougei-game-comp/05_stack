@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
     statc_initialize(&s);
     
     while(fgets(str, sizeof(str), stdin)){
+        int v;
         int n = atoi(str);
         switch(n){
         default:
@@ -50,7 +51,7 @@ int main(int argc, char *argv[])
             break;
         case -1:
             // スタックから取り出す
-            int v = stack_pop(&s);
+            v = stack_pop(&s);
             if(v != -1) printf("%d", n);
             printf("\n");
             break;
